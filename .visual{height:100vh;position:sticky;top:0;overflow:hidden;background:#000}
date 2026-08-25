@@ -11,7 +11,17 @@ body{overflow-x:hidden}
 body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .page{display:grid;grid-template-columns:50vw 50vw;min-height:100vh}
 .visual{height:100vh;position:sticky;top:0;overflow:hidden;background:#000}
-.visual img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12);transform:scale(1.12);opacity:.9}
+ .visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #050505);
+    pointer-events: none;
+}
+.visual img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12);transform:scale(1.12);opacity:.1}
 .label{position:absolute;bottom:28px;left:28px;z-index:3;color:#666;font-size:9px;letter-spacing:4px}
 .content{min-height:100vh;padding:55px 8vw 45px 5vw;display:flex;flex-direction:column;justify-content:center}
 .lang{align-self:flex-end;display:flex;gap:8px;align-items:center;margin-bottom:58px}
