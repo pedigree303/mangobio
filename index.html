@@ -354,6 +354,187 @@ footer{
     right:-4px;
   }
 }
+
+/* inline reading tracker */
+.reading-inline{
+  position:relative;
+  margin:20px 0 18px;
+}
+
+.reading-trigger{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 11px;
+  border:1px solid #2f2f2f;
+  background:#080808;
+  color:#777;
+  font-family:monospace;
+  font-size:8px;
+  letter-spacing:1.5px;
+  cursor:default;
+  transition:.18s;
+}
+
+.reading-inline:hover .reading-trigger{
+  color:#eee;
+  border-color:#555;
+}
+
+.reading-popup{
+  position:absolute;
+  left:0;
+  bottom:36px;
+  width:265px;
+  padding:16px;
+  background:#080808;
+  border:1px solid #333;
+  box-shadow:0 10px 35px rgba(0,0,0,.55);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(4px);
+  transition:.18s;
+  z-index:20;
+}
+
+.reading-inline:hover .reading-popup,
+.reading-inline:focus-within .reading-popup{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.reading-popup small{
+  color:#666;
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+.reading-popup h3{
+  margin:9px 0 4px;
+  font-family:"Space Grotesk";
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.reading-popup p{
+  margin:0;
+  color:#999;
+  font-size:9px;
+  line-height:1.6;
+}
+
+.reading-progress{
+  margin-top:10px;
+  font-family:monospace;
+  font-size:9px;
+  color:#777;
+}
+
+.reading-progress span{
+  color:#eee;
+}
+
+.reading-note{
+  margin-top:7px !important;
+  color:#555 !important;
+  font-size:8px !important;
+}
+
+.reading-log-wrap{
+  position:relative;
+  display:inline-block;
+  margin-top:13px;
+  color:#eee;
+  font-family:monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  cursor:default;
+}
+
+.reading-log-wrap:hover{
+  color:#fff;
+}
+
+.reading-log{
+  position:absolute;
+  left:-16px;
+  top:calc(100% + 9px);
+  width:265px;
+  padding:12px;
+  background:#080808;
+  border:1px solid #333;
+  box-shadow:0 10px 30px rgba(0,0,0,.55);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-4px);
+  transition:.18s;
+  z-index:30;
+}
+
+.reading-log-wrap:hover .reading-log,
+.reading-log-wrap:focus-within .reading-log{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.reading-log-title{
+  color:#666;
+  font-size:8px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.reading-day{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:6px 0;
+  color:#777;
+  font-family:monospace;
+  font-size:8px;
+}
+
+.reading-day-label{
+  width:38px;
+  flex:none;
+}
+
+.reading-scale{
+  flex:1;
+  height:3px;
+  background:#1b1b1b;
+  position:relative;
+}
+
+.reading-scale span{
+  display:block;
+  height:100%;
+  background:#aaa;
+}
+
+.reading-day-value{
+  width:25px;
+  text-align:right;
+  color:#aaa;
+}
+
+.reading-scale-legend{
+  margin-top:8px;
+  color:#444;
+  font-size:7px;
+  text-align:right;
+}
+
+@media(max-width:800px){
+  .reading-log{
+    left:-16px;
+    width:265px;
+  }
+}
+
 </style>
 </head>
 
@@ -411,6 +592,52 @@ footer{
 
   </div>
 
+
+  <div class="reading-inline">
+
+    <span class="reading-trigger">CZYTAM</span>
+
+    <div class="reading-popup">
+
+      <small>OBECNIE CZYTAM</small>
+
+      <h3>BRACIA KARAMAZOW</h3>
+
+      <p>Fiodor Dostojewski</p>
+
+      <!-- Wszystkie informacje o aktualnej książce są tutaj -->
+      <div class="reading-progress">
+        <span>37 / 556 stron</span> · 6.65%
+      </div>
+
+      <p class="reading-note">(aktualizowane codziennie)</p>
+
+      <!-- Dopiero po najechaniu na to pojawia się sam progress dzienny -->
+      <div class="reading-log-wrap">
+        DZIENNIK CZYTANIA
+
+        <div class="reading-log">
+          <div class="reading-log-title">POSTĘP WG DNI</div>
+
+          <div class="reading-day">
+            <span class="reading-day-label">DZIEŃ 01</span>
+            <div class="reading-scale"><span style="width:3.24%"></span></div>
+            <span class="reading-day-value">18</span>
+          </div>
+
+          <div class="reading-day">
+            <span class="reading-day-label">DZIEŃ 02</span>
+            <div class="reading-scale"><span style="width:5.76%"></span></div>
+            <span class="reading-day-value">32</span>
+          </div>
+
+          <div class="reading-scale-legend">strony osiągnięte / 556</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="social-title">ZNAJDZIESZ MNIE NA</div>
 
 </div>
@@ -450,6 +677,52 @@ footer{
       not to be interested in it.
     </p>
 
+  </div>
+
+
+  <div class="reading-inline">
+
+    <span class="reading-trigger">READING</span>
+
+    <div class="reading-popup">
+
+      <small>CURRENTLY READING</small>
+
+      <h3>THE BROTHERS KARAMAZOV</h3>
+
+      <p>Fyodor Dostoevsky</p>
+
+      <!-- Wszystkie informacje o aktualnej książce są tutaj -->
+      <div class="reading-progress">
+        <span>37 / 556 pages</span> · 6.65%
+      </div>
+
+      <p class="reading-note">(updated daily)</p>
+
+      <!-- Dopiero po najechaniu na to pojawia się sam progress dzienny -->
+      <div class="reading-log-wrap">
+        READING LOG
+
+        <div class="reading-log">
+          <div class="reading-log-title">PROGRESS BY DAY</div>
+
+          <div class="reading-day">
+            <span class="reading-day-label">DAY 01</span>
+            <div class="reading-scale"><span style="width:3.24%"></span></div>
+            <span class="reading-day-value">18</span>
+          </div>
+
+          <div class="reading-day">
+            <span class="reading-day-label">DAY 02</span>
+            <div class="reading-scale"><span style="width:5.76%"></span></div>
+            <span class="reading-day-value">32</span>
+          </div>
+
+          <div class="reading-scale-legend">pages reached / 556</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="social-title">FIND ME ON</div>
