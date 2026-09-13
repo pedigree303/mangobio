@@ -714,7 +714,7 @@ footer{
         DZIENNIK CZYTANIA →
         <div class="reading-log">
 
-          <div class="reading-log-title">POSTĘP WEDŁUG DNI</div>
+          <div class="reading-log-title">POSTĘP WG DNI</div>
 
           <div class="reading-day">
             <span class="reading-day-label">DZIEŃ 01</span>
@@ -1050,8 +1050,13 @@ const exitTitle = document.getElementById('exitTitle');
 const exitText = document.getElementById('exitText');
 let exitIntentShown = false;
 let exitTrollDisabled = false;
+const isMobileDevice =
+  window.matchMedia('(max-width: 800px)').matches ||
+  window.matchMedia('(pointer: coarse)').matches ||
+  'ontouchstart' in window;
 
 function showExitTroll(){
+  if(isMobileDevice) return;
   if(exitTrollDisabled || !exitOverlay) return;
   exitIntentShown = true;
 
@@ -1071,24 +1076,24 @@ function hideExitTroll(){
   exitIntentShown = false;
 }
 
-// These buttons dismiss THIS popup only. The troll can appear again on the next exit attempt.
+
 stayButton.onclick = () => hideExitTroll();
 leaveButton.onclick = () => hideExitTroll();
 
-// The X dismisses the troll permanently for this page visit.
+
 exitClose.onclick = () => {
   exitTrollDisabled = true;
   hideExitTroll();
 };
 
-// Custom exit-intent when the cursor moves out through the top of the page.
-document.addEventListener('mouseout', (event) => {
+
+if(!isMobileDevice) document.addEventListener('mouseout', (event) => {
   if(event.relatedTarget || event.toElement) return;
   if(event.clientY <= 5) showExitTroll();
 });
 
-// Extra coverage for touch/mobile-like pointer leaving.
-document.addEventListener('pointerout', (event) => {
+
+if(!isMobileDevice) document.addEventListener('pointerout', (event) => {
   if(event.relatedTarget) return;
   if(event.clientY <= 5) showExitTroll();
 });
