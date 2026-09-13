@@ -208,7 +208,7 @@ button.social{
 .social small{
   display:block;
   color:#666;
-  font-size:8px;
+  font-size:10px;
   letter-spacing:2px;
   margin-bottom:4px
 }
@@ -380,9 +380,9 @@ footer{
 .reading-popup{
   position:absolute;
   left:0;
-  bottom:36px;
-  width:265px;
-  padding:16px;
+  bottom:40px;
+  width:340px;
+  padding:22px;
   background:#080808;
   border:1px solid #333;
   box-shadow:0 10px 35px rgba(0,0,0,.55);
@@ -400,25 +400,25 @@ footer{
 }
 .reading-popup small{
   color:#666;
-  font-size:8px;
+  font-size:10px;
   letter-spacing:2px;
 }
 .reading-popup h3{
   margin:9px 0 4px;
   font-family:"Space Grotesk";
-  font-size:12px;
-  letter-spacing:1px;
+  font-size:14px;
+  letter-spacing:1.2px;
 }
 .reading-popup p{
   margin:0;
   color:#999;
-  font-size:9px;
-  line-height:1.6;
+  font-size:11px;
+  line-height:1.7;
 }
 .reading-progress{
-  margin-top:10px;
+  margin-top:12px;
   font-family:monospace;
-  font-size:9px;
+  font-size:11px;
   color:#777;
 }
 .reading-progress span{
@@ -427,7 +427,7 @@ footer{
 .reading-note{
   margin-top:10px !important;
   color:#555 !important;
-  font-size:9px !important;
+  font-size:11px !important;
 }
 .reading-log-wrap{
   position:relative;
@@ -435,7 +435,7 @@ footer{
   margin-top:15px;
   color:#666;
   font-family:monospace;
-  font-size:10px;
+  font-size:11px;
   letter-spacing:1px;
   cursor:default;
 }
@@ -447,8 +447,8 @@ footer{
   left:0;
   top:calc(100% + 8px);
   bottom:auto;
-  width:235px;
-  padding:12px;
+  width:310px;
+  padding:16px;
   background:#080808;
   border:1px solid #333;
   box-shadow:0 10px 30px rgba(0,0,0,.5);
@@ -465,26 +465,26 @@ footer{
 }
 .reading-log-title{
   color:#666;
-  font-size:8px;
+  font-size:10px;
   letter-spacing:2px;
   margin-bottom:8px;
 }
 .reading-day{
   display:flex;
   align-items:center;
-  gap:7px;
-  margin:6px 0;
+  gap:9px;
+  margin:8px 0;
   color:#777;
   font-family:monospace;
-  font-size:8px;
+  font-size:10px;
 }
 .reading-day-label{
-  width:38px;
+  width:48px;
   flex:none;
 }
 .reading-scale{
   flex:1;
-  height:3px;
+  height:5px;
   background:#1b1b1b;
   position:relative;
 }
@@ -494,29 +494,150 @@ footer{
   background:#aaa;
 }
 .reading-day-value{
-  width:25px;
+  width:30px;
   text-align:right;
   color:#aaa;
 }
 .reading-scale-legend{
-  margin-top:10px;
-  color:#444;
-  font-size:10x
+  margin-top:12px;
+  color:#555;
+  font-size:10px;
   text-align:right;
 }
 @media(max-width:800px){
   .reading-popup{
-    width:255px;
+    width:320px;
   }
   .reading-log{
-    width:225px;
+    width:285px;
   }
 }
+
+
+
+
+/* EXIT TROLL */
+.exit-overlay{
+  position:fixed;
+  inset:0;
+  z-index:4000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(5,5,5,.55);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+}
+.exit-overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+.exit-popup{
+  position:relative;
+  width:min(420px,calc(100vw - 40px));
+  padding:28px;
+  background:#080808;
+  border:1px solid #333;
+  box-shadow:0 15px 60px rgba(0,0,0,.85);
+  text-align:center;
+}
+.exit-close{
+  position:absolute;
+  top:7px;
+  right:10px;
+  border:0;
+  background:none;
+  color:#666;
+  font-size:20px;
+  line-height:1;
+  cursor:pointer;
+  padding:0;
+  transition:.2s;
+}
+.exit-close:hover{
+  color:#eee;
+}
+.exit-popup small{
+  display:block;
+  color:#666;
+  font-size:9px;
+  letter-spacing:3px;
+  margin-bottom:14px;
+}
+.exit-popup h2{
+  margin:0 0 10px;
+  font-family:"Space Grotesk";
+  font-size:18px;
+  letter-spacing:3px;
+  color:#eee;
+}
+.exit-popup p{
+  margin:0;
+  color:#999;
+  font-size:12px;
+  line-height:1.7;
+}
+.exit-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:22px;
+}
+.exit-button{
+  border:1px solid #333;
+  background:#0b0b0b;
+  color:#999;
+  padding:10px 14px;
+  font-family:Inter,Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:1.5px;
+  cursor:pointer;
+  transition:.2s;
+}
+.exit-button:hover{
+  color:#eee;
+  border-color:#777;
+}
+.exit-button.primary{
+  color:#eee;
+}
+
+/* LANGUAGE WELCOME */
+.language-welcome{position:fixed;inset:0;z-index:5000;display:flex;pointer-events:auto;align-items:center;justify-content:center;background:rgba(5,5,5,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.25s}
+.language-welcome.hidden{display:none}
+.language-welcome-box{position:relative;z-index:5001;pointer-events:auto;width:min(460px,calc(100vw - 40px));padding:38px 30px;background:#080808;border:1px solid #333;box-shadow:0 15px 60px rgba(0,0,0,.8);text-align:center}
+.language-welcome-title{font-family:"Space Grotesk";font-size:14px;letter-spacing:3px;color:#eee;margin-bottom:30px}
+.language-welcome-subtitle{font-size:10px;letter-spacing:3px;color:#555;margin-top:-22px;margin-bottom:30px}
+.language-options{position:relative;z-index:5002;display:flex;justify-content:center;gap:18px;pointer-events:auto}
+.language-option{width:92px;height:72px;border:1px solid #333;background:#080808;color:#777;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;padding:0;position:relative;z-index:5003;pointer-events:auto;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.language-option:hover{border-color:#777;transform:translateY(-2px)}
+.language-flag{width:60px;height:40px;display:block;object-fit:cover;image-rendering:auto}
+@media(max-width:500px){.language-options{gap:10px}.language-option{width:82px;height:68px}.language-flag{width:54px;height:36px}}
 
 </style>
 </head>
 
 <body>
+
+<div class="language-welcome" id="languageWelcome">
+  <div class="language-welcome-box">
+    <div class="language-welcome-title">WYBIERZ JĘZYK</div>
+    <div class="language-welcome-subtitle">CHOOSE YOUR LANGUAGE</div>
+    <div class="language-options">
+      <button type="button" class="language-option" id="welcomePl" aria-label="Polski">
+        <img class="language-flag" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f1f5-1f1f1.svg" alt="" aria-hidden="true">
+      </button>
+      <button type="button" class="language-option" id="welcomeEn" aria-label="English">
+        <img class="language-flag" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f1ec-1f1e7.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="page">
 
@@ -593,7 +714,7 @@ footer{
         DZIENNIK CZYTANIA →
         <div class="reading-log">
 
-          <div class="reading-log-title">POSTĘP WG DNI</div>
+          <div class="reading-log-title">POSTĘP WEDŁUG DNI</div>
 
           <div class="reading-day">
             <span class="reading-day-label">DZIEŃ 01</span>
@@ -828,6 +949,19 @@ footer{
 </div>
 
 
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-popup">
+    <button class="exit-close" id="exitClose" aria-label="Close">×</button>
+    <small>EXIT DETECTED</small>
+    <h2 id="exitTitle">EJ, DOKĄD?</h2>
+    <p id="exitText">Dlaczego wychodzisz? Przecież dopiero co tu byłeś.</p>
+    <div class="exit-buttons">
+      <button class="exit-button primary" id="stayButton">ZOSTAJĘ</button>
+      <button class="exit-button" id="leaveButton">MIMO TO WYJDŹ</button>
+    </div>
+  </div>
+</div>
+
 <script>
 
 const pl = document.getElementById('pl');
@@ -858,6 +992,33 @@ en.addEventListener('click', () => setLanguage('en'));
 
 setLanguage('pl');
 
+const languageWelcome = document.getElementById('languageWelcome');
+const welcomePl = document.getElementById('welcomePl');
+const welcomeEn = document.getElementById('welcomeEn');
+
+function chooseWelcomeLanguage(language){
+  setLanguage(language);
+  localStorage.setItem('siteLanguageChosen','1');
+  languageWelcome.classList.add('hidden');
+}
+
+welcomePl.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  chooseWelcomeLanguage('pl');
+});
+
+welcomeEn.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  chooseWelcomeLanguage('en');
+});
+
+if(localStorage.getItem('siteLanguageChosen') === '1'){
+  languageWelcome.classList.add('hidden');
+}
+
+
 
 document.getElementById('discord').onclick = async () => {
 
@@ -877,6 +1038,60 @@ document.getElementById('discord').onclick = async () => {
   } catch(e) {}
 
 };
+
+
+
+
+const exitOverlay = document.getElementById('exitOverlay');
+const stayButton = document.getElementById('stayButton');
+const leaveButton = document.getElementById('leaveButton');
+const exitClose = document.getElementById('exitClose');
+const exitTitle = document.getElementById('exitTitle');
+const exitText = document.getElementById('exitText');
+let exitIntentShown = false;
+let exitTrollDisabled = false;
+
+function showExitTroll(){
+  if(exitTrollDisabled || !exitOverlay) return;
+  exitIntentShown = true;
+
+  const isEnglish = document.documentElement.lang === 'en';
+  exitTitle.textContent = isEnglish ? 'HEY, WHERE ARE YOU GOING?' : 'EJ, DOKĄD?';
+  exitText.textContent = isEnglish
+    ? 'Why are you leaving? You just got here.'
+    : 'Dlaczego wychodzisz? Przecież dopiero co tu byłeś.';
+  stayButton.textContent = isEnglish ? "I'M STAYING" : 'ZOSTAJĘ';
+  leaveButton.textContent = isEnglish ? 'LEAVE ANYWAY' : 'MIMO TO WYJDŹ';
+
+  exitOverlay.classList.add('active');
+}
+
+function hideExitTroll(){
+  exitOverlay.classList.remove('active');
+  exitIntentShown = false;
+}
+
+// These buttons dismiss THIS popup only. The troll can appear again on the next exit attempt.
+stayButton.onclick = () => hideExitTroll();
+leaveButton.onclick = () => hideExitTroll();
+
+// The X dismisses the troll permanently for this page visit.
+exitClose.onclick = () => {
+  exitTrollDisabled = true;
+  hideExitTroll();
+};
+
+// Custom exit-intent when the cursor moves out through the top of the page.
+document.addEventListener('mouseout', (event) => {
+  if(event.relatedTarget || event.toElement) return;
+  if(event.clientY <= 5) showExitTroll();
+});
+
+// Extra coverage for touch/mobile-like pointer leaving.
+document.addEventListener('pointerout', (event) => {
+  if(event.relatedTarget) return;
+  if(event.clientY <= 5) showExitTroll();
+});
 
 
 const easterButton = document.getElementById('easterButton');
