@@ -250,14 +250,14 @@ footer{
 
 .easter-egg{
   position:fixed;
-  right:18px;
-  bottom:18px;
+  right:5px;
+  bottom:5px;
   z-index:1000;
 }
 
 .easter-button{
-  width:34px;
-  height:34px;
+  width:12px;
+  height:12px;
   border:1px solid #333;
   background:#080808;
   color:#555;
@@ -360,27 +360,24 @@ footer{
   position:relative;
   margin:20px 0 18px;
 }
-
 .reading-trigger{
   display:inline-flex;
   align-items:center;
-  min-height:30px;
-  padding:0 11px;
+  min-height:40px;
+  padding:0 21px;
   border:1px solid #2f2f2f;
   background:#080808;
   color:#777;
   font-family:monospace;
-  font-size:8px;
+  font-size:12px;
   letter-spacing:1.5px;
   cursor:default;
   transition:.18s;
 }
-
 .reading-inline:hover .reading-trigger{
   color:#eee;
   border-color:#555;
 }
-
 .reading-popup{
   position:absolute;
   left:0;
@@ -396,97 +393,83 @@ footer{
   transition:.18s;
   z-index:20;
 }
-
 .reading-inline:hover .reading-popup,
 .reading-inline:focus-within .reading-popup{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
-
 .reading-popup small{
   color:#666;
   font-size:8px;
   letter-spacing:2px;
 }
-
 .reading-popup h3{
   margin:9px 0 4px;
   font-family:"Space Grotesk";
   font-size:12px;
   letter-spacing:1px;
 }
-
 .reading-popup p{
   margin:0;
   color:#999;
   font-size:9px;
   line-height:1.6;
 }
-
 .reading-progress{
   margin-top:10px;
   font-family:monospace;
   font-size:9px;
   color:#777;
 }
-
 .reading-progress span{
   color:#eee;
 }
-
 .reading-note{
   margin-top:7px !important;
   color:#555 !important;
   font-size:8px !important;
 }
-
 .reading-log-wrap{
   position:relative;
-  display:inline-block;
-  margin-top:13px;
-  color:#eee;
+  display:block;
+  margin-top:12px;
+  color:#666;
   font-family:monospace;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:1.5px;
+  font-size:8px;
+  letter-spacing:1px;
   cursor:default;
 }
-
 .reading-log-wrap:hover{
-  color:#fff;
+  color:#eee;
 }
-
 .reading-log{
   position:absolute;
-  left:-16px;
-  top:calc(100% + 9px);
-  width:265px;
+  left:0;
+  top:calc(100% + 8px);
+  bottom:auto;
+  width:235px;
   padding:12px;
   background:#080808;
   border:1px solid #333;
-  box-shadow:0 10px 30px rgba(0,0,0,.55);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
   opacity:0;
   visibility:hidden;
-  transform:translateY(-4px);
+  transform:translateY(4px);
   transition:.18s;
-  z-index:30;
 }
-
 .reading-log-wrap:hover .reading-log,
 .reading-log-wrap:focus-within .reading-log{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
-
 .reading-log-title{
   color:#666;
   font-size:8px;
   letter-spacing:2px;
   margin-bottom:8px;
 }
-
 .reading-day{
   display:flex;
   align-items:center;
@@ -496,42 +479,38 @@ footer{
   font-family:monospace;
   font-size:8px;
 }
-
 .reading-day-label{
   width:38px;
   flex:none;
 }
-
 .reading-scale{
   flex:1;
   height:3px;
   background:#1b1b1b;
   position:relative;
 }
-
 .reading-scale span{
   display:block;
   height:100%;
   background:#aaa;
 }
-
 .reading-day-value{
   width:25px;
   text-align:right;
   color:#aaa;
 }
-
 .reading-scale-legend{
   margin-top:8px;
   color:#444;
   font-size:7px;
   text-align:right;
 }
-
 @media(max-width:800px){
+  .reading-popup{
+    width:255px;
+  }
   .reading-log{
-    left:-16px;
-    width:265px;
+    width:225px;
   }
 }
 
@@ -556,7 +535,7 @@ footer{
 </div>
 
 
-<div id="polish">
+<div id="polish" class="language-content">
 
   <div class="kicker">O MNIE</div>
 
@@ -605,19 +584,17 @@ footer{
 
       <p>Fiodor Dostojewski</p>
 
-      
       <div class="reading-progress">
         <span>37 / 556 stron</span> · 6.65%
       </div>
 
       <p class="reading-note">(aktualizowane codziennie)</p>
 
-      
       <div class="reading-log-wrap">
-        DZIENNIK CZYTANIA
-
+        DZIENNIK CZYTANIA →
         <div class="reading-log">
-          <div class="reading-log-title">POSTĘP WEDŁUG DNI</div>
+
+          <div class="reading-log-title">POSTĘP WG DNI</div>
 
           <div class="reading-day">
             <span class="reading-day-label">DZIEŃ 01</span>
@@ -631,7 +608,8 @@ footer{
             <span class="reading-day-value">32</span>
           </div>
 
-          <div class="reading-scale-legend">strony osiągnięte</div>
+          <div class="reading-scale-legend">strony osiągnięte / 556</div>
+
         </div>
       </div>
 
@@ -643,7 +621,7 @@ footer{
 </div>
 
 
-<div id="english" style="display:none">
+<div id="english" class="language-content" style="display:none">
 
   <div class="kicker">ABOUT ME</div>
 
@@ -692,18 +670,16 @@ footer{
 
       <p>Fyodor Dostoevsky</p>
 
-    
       <div class="reading-progress">
         <span>37 / 556 pages</span> · 6.65%
       </div>
 
       <p class="reading-note">(updated daily)</p>
 
-      
       <div class="reading-log-wrap">
-        READING LOG
-
+        READING LOG →
         <div class="reading-log">
+
           <div class="reading-log-title">PROGRESS BY DAY</div>
 
           <div class="reading-day">
@@ -718,7 +694,8 @@ footer{
             <span class="reading-day-value">32</span>
           </div>
 
-          <div class="reading-scale-legend">pages reached</div>
+          <div class="reading-scale-legend">pages reached / 556</div>
+
         </div>
       </div>
 
@@ -824,7 +801,7 @@ footer{
 
 <div class="easter-egg">
 
-  <button class="easter-button" id="easterButton">&lt;/&gt;</button>
+  <button class="easter-button" id="easterButton"></button>
 
   <div class="easter-popup" id="easterPopup">
 
@@ -875,11 +852,12 @@ function setLanguage(x){
     : 'THANKS FOR VISITING';
 
   document.documentElement.lang = p ? 'pl' : 'en';
-
 }
 
-pl.onclick = () => setLanguage('pl');
-en.onclick = () => setLanguage('en');
+pl.addEventListener('click', () => setLanguage('pl'));
+en.addEventListener('click', () => setLanguage('en'));
+
+setLanguage('pl');
 
 
 document.getElementById('discord').onclick = async () => {
