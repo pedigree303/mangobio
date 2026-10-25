@@ -1386,6 +1386,19 @@ html, body {
 .social-rail a:hover .rail-label,.social-rail button:hover .rail-label{opacity:1}
 @media(max-width:800px){.social-rail{right:10px;top:auto;bottom:18px;transform:none;flex-direction:row;gap:7px;padding:6px}.social-rail a,.social-rail button{width:38px;height:38px}.social-rail .rail-label{display:none}.content{padding:42px 22px 80px !important}}
 
+
+/* Single League of Legends icon with MAIN/ALT account picker */
+.social-rail .lol-chooser{position:relative;width:42px;height:42px}
+.social-rail .lol-chooser>button{width:42px;height:42px;display:grid;place-items:center;background:#0b0b0b;border:1px solid #303030;color:#ddd;cursor:pointer;padding:0;transition:color .2s,border-color .2s,transform .2s}
+.social-rail .lol-chooser>button svg{width:23px;height:23px;fill:currentColor}
+.social-rail .lol-chooser>button:hover,.social-rail .lol-chooser>button[aria-expanded="true"]{color:#fff;border-color:#777;transform:translateX(-2px)}
+.social-rail .lol-account-menu{position:absolute;right:50px;top:0;min-width:225px;background:#090909;border:1px solid #383838;box-shadow:0 8px 24px #000a;padding:5px;display:flex;flex-direction:column;gap:4px;z-index:30}
+.social-rail .lol-account-menu[hidden]{display:none}
+.social-rail .lol-account-menu a{width:auto;height:auto;min-height:42px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;padding:7px 10px;border:1px solid #252525;color:#eee;font-size:10px;letter-spacing:1.5px}
+.social-rail .lol-account-menu a span{font-size:11px;letter-spacing:0;color:#aaa}
+.social-rail .lol-account-menu a:hover{transform:none;color:#fff;border-color:#777}
+@media(max-width:800px){.social-rail .lol-chooser{width:38px;height:38px}.social-rail .lol-chooser>button{width:38px;height:38px}.social-rail .lol-account-menu{right:auto;left:0;top:auto;bottom:46px;min-width:210px}}
+
 </style>
 
 </head>
@@ -1976,12 +1989,47 @@ html, body {
   <a href="https://www.tiktok.com/@brokul1511" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
     <span class="rail-label">TIKTOK</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5C16.1 6.1 17.3 7.1 19 7.3V10.1C17.6 10 16.4 9.6 15.4 8.9V15.1C15.4 18.3 13.3 20.5 10.3 20.5C7.4 20.5 5.2 18.4 5.2 15.5C5.2 12.7 7.2 10.5 10.1 10.5C10.5 10.5 10.8 10.6 11.1 10.6V13.5C10.8 13.4 10.5 13.3 10.2 13.3C8.9 13.3 8 14.2 8 15.5C8 16.7 8.9 17.6 10.2 17.6C11.6 17.6 12.5 16.7 12.5 15.1V4.5H15.5Z"/></svg>
   </a>
+  <div class="lol-chooser">
+    <button type="button" id="lolMenuToggle" aria-label="Wybierz konto League of Legends" aria-expanded="false" aria-controls="lolAccountMenu" title="League of Legends · MAIN / ALT">
+      <span class="rail-label">LEAGUE OF LEGENDS</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="m1.912 0 1.212 2.474v19.053L1.912 24h14.73l1.337-4.682H8.33V0ZM12 1.516c-.913 0-1.798.112-2.648.312v1.74a9.738 9.738 0 0 0 2.648-.368c5.267 0 9.536 4.184 9.536 9.348a9.203 9.203 0 0 1-2.3 6.086l-.273.954-.602 2.112c2.952-1.993 4.89-5.335 4.89-9.122C23.25 6.468 18.213 1.516 12 1.516Zm0 2.673c-.924 0-1.814.148-2.648.414v13.713h8.817a8.246 8.246 0 0 0 2.36-5.768c0-4.617-3.818-8.359-8.529-8.359zM2.104 7.312A10.858 10.858 0 0 0 .75 12.576c0 1.906.492 3.7 1.355 5.266z" fill="currentColor"/></svg>
+    </button>
+    <div class="lol-account-menu" id="lolAccountMenu" hidden>
+      <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-FTCWL" target="_blank" rel="noopener" aria-label="MAIN KASSADIN88 FTCWL EUNE">MAIN <span>KASSADIN88#FTCWL</span></a>
+      <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-gojo" target="_blank" rel="noopener" aria-label="ALT KASSADIN88 gojo EUNE">ALT <span>KASSADIN88#gojo</span></a>
+    </div>
+  </div>
   <button type="button" aria-label="Copy Discord username" title="Discord" onclick="document.getElementById('discord').click()">
     <span class="rail-label">DISCORD · CLICK TO COPY</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.8 5.2A16.5 16.5 0 0 0 15 4l-.5 1a15 15 0 0 0-5 0L9 4a16.5 16.5 0 0 0-3.8 1.2C2.8 8.2 2.2 11.8 2.5 15.4A16.5 16.5 0 0 0 7 17.7l1.1-1.5c-.6-.2-1.2-.5-1.7-.8l.4-.3c3.2 1.5 7 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.5 16.5 0 0 0 4.5-2.3c.4-4.2-.7-7.8-2.5-10.2ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
   </button>
 </nav>
 
 <script>
+
+const lolMenuToggle = document.getElementById('lolMenuToggle');
+const lolAccountMenu = document.getElementById('lolAccountMenu');
+if (lolMenuToggle && lolAccountMenu) {
+  lolMenuToggle.addEventListener('click', () => {
+    const isOpen = lolMenuToggle.getAttribute('aria-expanded') === 'true';
+    lolMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+    lolAccountMenu.hidden = isOpen;
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.lol-chooser')) {
+      lolAccountMenu.hidden = true;
+      lolMenuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      lolAccountMenu.hidden = true;
+      lolMenuToggle.setAttribute('aria-expanded', 'false');
+      lolMenuToggle.focus();
+    }
+  });
+}
+
+
 
 
 
