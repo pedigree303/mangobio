@@ -1399,944 +1399,231 @@ html, body {
 .social-rail .lol-account-menu a:hover{transform:none;color:#fff;border-color:#777}
 @media(max-width:800px){.social-rail .lol-chooser{width:38px;height:38px}.social-rail .lol-chooser>button{width:38px;height:38px}.social-rail .lol-account-menu{right:auto;left:0;top:auto;bottom:46px;min-width:210px}}
 
+
+
+/* SOCIALS ONLY — larger, clearer controls; Sukuna/background untouched */
+.social-rail{
+  right: 42px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  gap: 13px !important;
+  padding: 12px !important;
+  border-color: #383033 !important;
+  background: rgba(7,7,7,.92) !important;
+  box-shadow: 0 12px 38px rgba(0,0,0,.45);
+}
+.social-rail > a,
+.social-rail > button,
+.social-rail .lol-chooser,
+.social-rail .lol-chooser > button{
+  width: 58px !important;
+  height: 58px !important;
+}
+.social-rail > a,
+.social-rail > button,
+.social-rail .lol-chooser > button{
+  border-color: #393236 !important;
+  background: linear-gradient(145deg, #151113, #080808) !important;
+}
+.social-rail svg,
+.social-rail .lol-chooser > button svg{
+  width: 27px !important;
+  height: 27px !important;
+}
+.social-rail .rail-label{
+  right: 68px !important;
+  font-size: 10px !important;
+  padding: 9px 12px !important;
+  border-color: #49383d !important;
+}
+.social-rail .lol-account-menu{
+  right: 68px !important;
+  min-width: 245px !important;
+}
+@media(max-width:800px){
+  .social-rail{
+    right: 50% !important;
+    left: auto !important;
+    bottom: 18px !important;
+    top: auto !important;
+    transform: translateX(50%) !important;
+    gap: 9px !important;
+    padding: 9px !important;
+  }
+  .social-rail > a,
+  .social-rail > button,
+  .social-rail .lol-chooser,
+  .social-rail .lol-chooser > button{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .social-rail svg,
+  .social-rail .lol-chooser > button svg{
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .social-rail .lol-account-menu{
+    right: auto !important;
+    left: 0 !important;
+    top: auto !important;
+    bottom: 59px !important;
+  }
+}
+
+
+.social-rail{
+  position:fixed !important;
+  top:32px !important;
+  left:50% !important;
+  right:auto !important;
+  bottom:auto !important;
+  transform:translateX(-50%) !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+  z-index:100 !important;
+}
+.social-rail .rail-label{
+  right:auto !important; left:50% !important; top:calc(100% + 9px) !important;
+  transform:translateX(-50%) !important;
+}
+.social-rail a:hover .rail-label,
+.social-rail button:hover .rail-label{opacity:1}
+.social-rail .lol-account-menu{
+  right:auto !important; left:50% !important; top:calc(100% + 12px) !important;
+  transform:translateX(-50%) !important;
+}
+@media(max-width:800px){
+  .social-rail{top:20px !important;bottom:auto !important;left:50% !important;right:auto !important;transform:translateX(-50%) !important;gap:8px !important}
+  .social-rail .lol-account-menu{left:50% !important;right:auto !important;top:calc(100% + 10px) !important;bottom:auto !important;transform:translateX(-50%) !important}
+}
+
+
+
+.extras{
+  grid-column:2;
+  width:100%;
+  position:relative;
+  z-index:2;
+  min-width:0;
+  min-height:100vh;
+  padding:132px clamp(22px,5vw,76px) 60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:26px;
+  background:linear-gradient(180deg,rgba(5,5,5,.18),#050505 45%);
+}
+.language-card{width:min(100%,620px);text-align:center;border:1px solid #292329;background:rgba(8,7,9,.82);padding:24px 26px;color:#aaa}
+.language-tabs{display:flex;justify-content:center;gap:18px;margin-bottom:17px}
+.language-tabs button{border:0;border-bottom:1px solid transparent;background:none;color:#666;padding:7px 5px;font:600 10px Inter,Arial,sans-serif;letter-spacing:2px;cursor:pointer}
+.language-tabs button.active{color:#fff;border-bottom-color:#b9a2ff}
+.language-copy{font-size:14px;line-height:1.85;margin:0;color:#aaa}
+.media-stack{width:min(100%,620px);display:flex;flex-direction:column;align-items:center;gap:24px}
+.joke-image{display:block;width:min(100%,475px);height:auto;object-fit:contain;border:1px solid #28232b}
+.kassadin-image{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #28232b;box-shadow:0 12px 42px #0009}
+@media(max-width:800px){
+  .page{display:block}
+  .extras{grid-column:auto;width:100%}
+  .visual{height:54vh}
+  .extras{min-height:0;padding:95px 18px 42px;gap:20px}
+  .language-card{padding:20px 16px}
+  .media-stack{gap:18px}
+}
+
 </style>
 
+
 </head>
-
-
-
 <body>
+  <div class="page">
+    <section class="visual">
+      <img src="sukuna.png" alt="Sukuna">
+    </section>
+    <main class="extras">
+      <section class="language-card" aria-label="Informacja o stronie">
+        <div class="language-tabs" role="tablist" aria-label="Language">
+          <button type="button" class="active" id="plTab" role="tab" aria-selected="true">POLSKI</button>
+          <button type="button" id="enTab" role="tab" aria-selected="false">ENGLISH</button>
+        </div>
+        <p class="language-copy" id="languageCopy" lang="pl">Kiedyś ten pomysł naprawdę mnie jarał, ale z czasem trochę mi się znudził. Na razie trwają prace może jeszcze do niego wrócę.</p>
+      </section>
+      <section class="media-stack" aria-label="Memy i grafika">
+        <img class="joke-image" src="joke.png" alt="Mem: Sorry bro, the joke is still being built. Keep scrolling.">
+        <img class="kassadin-image" src="kassadin.webp" alt="Kassadin — grafika z League of Legends">
+      </section>
+    </main>
+  </div>
 
-
-
-<div class="language-welcome" id="languageWelcome">
-
-  <div class="language-welcome-box">
-
-    <div class="language-welcome-title">WYBIERZ JĘZYK</div>
-
-    <div class="language-welcome-subtitle">CHOOSE YOUR LANGUAGE</div>
-
-    <div class="language-options">
-
-      <button type="button" class="language-option" id="welcomePl" aria-label="Polski">
-
-        <img class="language-flag" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f1f5-1f1f1.svg" alt="" aria-hidden="true">
-
+  <nav class="social-rail" aria-label="Social media">
+    <a href="https://steamcommunity.com/profiles/76561199138254595" target="_blank" rel="noopener" aria-label="Steam" title="Steam">
+      <span class="rail-label">STEAM</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@brokul1511" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+      <span class="rail-label">TIKTOK</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5C16.1 6.1 17.3 7.1 19 7.3V10.1C17.6 10 16.4 9.6 15.4 8.9V15.1C15.4 18.3 13.3 20.5 10.3 20.5C7.4 20.5 5.2 18.4 5.2 15.5C5.2 12.7 7.2 10.5 10.1 10.5C10.5 10.5 10.8 10.6 11.1 10.6V13.5C10.8 13.4 10.5 13.3 10.2 13.3C8.9 13.3 8 14.2 8 15.5C8 16.7 8.9 17.6 10.2 17.6C11.6 17.6 12.5 16.7 12.5 15.1V4.5H15.5Z"/></svg>
+    </a>
+    <div class="lol-chooser">
+      <button type="button" id="lolMenuToggle" aria-label="Wybierz konto League of Legends" aria-expanded="false" aria-controls="lolAccountMenu" title="League of Legends">
+        <span class="rail-label">LEAGUE OF LEGENDS</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m1.912 0 1.212 2.474v19.053L1.912 24h14.73l1.337-4.682H8.33V0ZM12 1.516c-.913 0-1.798.112-2.648.312v1.74a9.738 9.738 0 0 0 2.648-.368c5.267 0 9.536 4.184 9.536 9.348a9.203 9.203 0 0 1-2.3 6.086l-.273.954-.602 2.112c2.952-1.993 4.89-5.335 4.89-9.122C23.25 6.468 18.213 1.516 12 1.516Zm0 2.673c-.924 0-1.814.148-2.648.414v13.713h8.817a8.246 8.246 0 0 0 2.36-5.768c0-4.617-3.818-8.359-8.529-8.359zM2.104 7.312A10.858 10.858 0 0 0 .75 12.576c0 1.906.492 3.7 1.355 5.266z" fill="currentColor"/></svg>
       </button>
-
-      <button type="button" class="language-option" id="welcomeEn" aria-label="English">
-
-        <img class="language-flag" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f1ec-1f1e7.svg" alt="" aria-hidden="true">
-
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-
-<div class="page">
-
-
-
-<section class="visual">
-
-  <img src="sukuna.png" alt="Czarno-biała ilustracja">
-
-</section>
-
-
-
-<main class="content">
-
-
-
-<div class="lang">
-
-  <button id="pl" class="active">PL</button>
-
-  <span class="slash">/</span>
-
-  <button id="en">ENG</button>
-
-</div>
-
-
-
-
-
-<div id="polish" class="language-content">
-
-
-
-  <div class="kicker">O MNIE</div>
-
-
-
-  <p class="quote">
-
-    „Czasami ludzie nie chcą słyszeć prawdy, ponieważ nie chcą, aby ich iluzje zostały zniszczone.” – Fryderyk Nietzsche
-
-  </p>
-
-
-
-  <div class="bio">
-
-
-
-    <p>
-
-      Różnie na mnie mówią czasem Pedigree, czasem c**l.
-
-      Ale mów na mnie <b>Rafał.</b>
-
-    </p>
-
-
-
-    <div class="line"></div>
-
-
-
-    
-    <div class="fav-grid">
-      <div class="fav-card"><div class="fav-label">ULUBIONY AKTOR</div><div class="fav-value">Mads Mikkelsen</div></div>
-      <div class="fav-card"><div class="fav-label">ULUBIONA POSTAĆ</div><div class="fav-value">Joonwoo Choi</div></div>
-      <div class="fav-card"><div class="fav-label">ULUBIONA PORA ROKU</div><div class="fav-value">Wiosna</div></div>
-    </div>
-    <div class="profile-archive">
-      <div class="archive-column">
-        <section class="archive-card">
-          <div class="archive-kicker">01 / OSOBOWOŚĆ</div><h3 class="archive-title">WIĘCEJ NIŻ WIDAĆ.</h3>
-          <p class="archive-copy">Na co dzień jestem raczej pogodną osobą. Dużo się śmieję i uśmiecham, szczególnie w prawdziwym życiu, i często staram się utrzymywać lekką atmosferę. Nie znaczy to jednak, że w mojej głowie zawsze jest równie spokojnie. Czasem po prostu chcę, żeby dzień już się skończył i żebym mógł pobyć w ciszy.</p>
-          <p class="archive-copy">Wolę spokój od chaosu, samotność od zatłoczonych miejsc, a logiczne myślenie od impulsywnych reakcji. Zwykle analizuję ludzi i sytuacje, zamiast od razu kierować się emocjami. Z czasem nauczyłem się jednak, że uczucia innych też mają znaczenie racjonalność nie musi oznaczać obojętności.</p>
-          <p class="archive-copy">Potrafię być wyrozumiały, wybaczać, przyznać się do błędu i szukać kompromisu, jeśli widzę, że obie strony naprawdę chcą się dogadać. Nie każdą różnicę zdań trzeba zamieniać w konflikt. Rzadko próbuję na siłę zmieniać czyjeś przekonania, bo wiem, że ludzie nie zmieniają zdania tylko dlatego, że ktoś mówi głośniej.</p>
-          <p class="archive-copy">Nie zawsze jestem jednak autentyczny wobec osób, za którymi nie przepadam. Zdarza mi się zachowywać uprzejmie i udawać, że wszystko jest w porządku, jeśli po prostu nie uważam danej relacji za wartą mojego czasu. Kiedy kończy mi się cierpliwość, potrafię być ekscentryczny i brutalnie bezpośredni mówię, co naprawdę myślę, zamiast udawać, że chcę czyjegoś towarzystwa.</p>
-          <p class="archive-copy">Często patrzę na rzeczy pesymistycznie, nawet jeśli na zewnątrz brzmię optymistycznie. Mam tendencję do analizowania wszystkiego, podważania intencji i szukania logiki w zachowaniu innych. Czasem pomaga mi to zrozumieć sytuację, a czasem utrudnia zwyczajne odpuszczenie.</p>
-          <p class="archive-copy">Ogólnie jestem ateistą, ale zdarza mi się przedstawiać jako katolik lub ewangelik, jeśli widzę w tym osobistą korzyść. Bywa to sprzeczne z moimi przekonaniami, ale pokazuje też, jak pragmatycznie potrafię podchodzić do niektórych sytuacji.</p>
-        </section>
-
-      </div>
-      <div class="archive-column">
-        
-        <section class="archive-card">
-          <div class="archive-kicker">06 / POSTACIE</div><h3 class="archive-title">TOP 5 FICTIONAL CHARACTERS.</h3>
-          <ol class="archive-list"><li>Joonwoo Choi</li><li>Satoru Gojo</li><li>Arthur Leywin / King Grey</li><li>Martin <span style="color:#888"> Another Round</span></li><li>Ryomen Sukuna</li></ol>
-        </section>
-        <section class="archive-card">
-          <div class="archive-kicker">07 / ŚWIATY FIKCYJNE</div><h3 class="archive-title">TOP 5 WORKS OF FICTION.</h3>
-          <ol class="archive-list"><li>Random Chat</li><li>Jujutsu Kaisen</li><li>Bleach</li><li>Naruto</li><li>One Piece</li></ol>
-        </section>
+      <div class="lol-account-menu" id="lolAccountMenu" hidden>
+        <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-FTCWL" target="_blank" rel="noopener" aria-label="MAIN KASSADIN88 FTCWL EUNE">MAIN <span>KASSADIN88#FTCWL</span></a>
+        <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-gojo" target="_blank" rel="noopener" aria-label="ALT KASSADIN88 gojo EUNE">ALT <span>KASSADIN88#gojo</span></a>
       </div>
     </div>
-  </div>
-
-
-
-
-
-  <div class="reading-inline">
-
-
-
-    <span class="reading-trigger">CZYTAM</span>
-
-
-
-    <div class="reading-popup">
-
-
-
-      <small>OBECNIE CZYTAM</small>
-
-
-
-      <h3>BRACIA KARAMAZOW</h3>
-
-
-
-      <p>Fiodor Dostojewski</p>
-
-
-
-      <div class="reading-progress">
-
-        <span>95 / 556 stron</span> · 17,09%
-
-      </div>
-
-
-
-    </div>
-
-  </div>
-
-
-
-  <div class="social-title">ZNAJDZIESZ MNIE NA</div>
-
-
-
-</div>
-
-
-
-
-
-<div id="english" class="language-content" style="display:none">
-
-
-
-  <div class="kicker">ABOUT ME</div>
-
-
-
-  <p class="quote">
-
-    „Sometimes people don't want to hear the truth because they don't want their illusions destroyed.” – Friedrich Nietzsche
-
-  </p>
-
-
-
-  <div class="bio">
-
-
-
-    <p>
-
-      People call me many things sometimes Pedigree, sometimes p**k.
-
-      But call me <b>Rafal/Rafał.</b>
-
-    </p>
-
-
-
-    <div class="line"></div>
-
-
-
-    
-    <div class="fav-grid">
-      <div class="fav-card"><div class="fav-label">FAVOURITE ACTOR</div><div class="fav-value">Mads Mikkelsen</div></div>
-      <div class="fav-card"><div class="fav-label">FAVOURITE CHARACTER</div><div class="fav-value">Joonwoo Choi</div></div>
-      <div class="fav-card"><div class="fav-label">FAVOURITE SEASON</div><div class="fav-value">Spring</div></div>
-    </div>
-    <div class="profile-archive">
-      <div class="archive-column">
-        <section class="archive-card">
-          <div class="archive-kicker">01 / PERSONALITY</div><h3 class="archive-title">MORE THAN WHAT YOU SEE.</h3>
-          <p class="archive-copy">I'm generally a cheerful person. I laugh a lot, smile often and tend to keep things light, especially in real life. But being cheerful doesn't necessarily mean my mind is at peace. Sometimes, I just want the day to be over so I can finally have some quiet to myself.</p>
-          <p class="archive-copy">I prefer peace over chaos, solitude over crowded places, and logic over impulsive reactions. I tend to analyse people and situations rather than immediately act on what I feel. Over time, though, I've learned that understanding someone's emotions matters just as much as understanding the facts. Being rational doesn't mean having to be indifferent.</p>
-          <p class="archive-copy">I'm willing to listen, forgive, admit my mistakes and look for a compromise when I believe it's worth reaching one. I know I'm not always right, and I don't believe every disagreement needs to turn into a fight. Most people won't change their minds just because someone argues louder, so I'd rather choose my battles than waste my energy trying to convince everyone.</p>
-          <p class="archive-copy">I'm not always as genuine with people I dislike. Sometimes I keep things polite and act as though everything is fine, simply because I don't consider every person worth my time or energy. But when I reach my limit, I can become brutally direct, eccentric and unapologetically honest about what I think. I don't feel the need to pretend that I want someone's company when I don't.</p>
-          <p class="archive-copy">I often look at things through a pessimistic lens, even when I appear optimistic on the outside. I tend to overanalyse, question people's intentions and look for the logic behind their actions. Sometimes this helps me understand situations; other times, it makes it harder to simply let things be.</p>
-          <p class="archive-copy">I'm an atheist, though I may present myself as Catholic or Evangelical if I see a personal advantage in doing so. It can contradict my actual beliefs, but it also reflects how pragmatically I sometimes approach certain situations.</p>
-        </section>
-
-      </div>
-      <div class="archive-column">
-        
-        <section class="archive-card">
-          <div class="archive-kicker">06 / CHARACTERS</div><h3 class="archive-title">TOP 5 FICTIONAL CHARACTERS.</h3>
-          <ol class="archive-list"><li>Joonwoo Choi</li><li>Satoru Gojo</li><li>Arthur Leywin / King Grey</li><li>Martin <span style="color:#888"> Another Round</span></li><li>Ryomen Sukuna</li></ol>
-        </section>
-        <section class="archive-card">
-          <div class="archive-kicker">07 / FICTIONAL WORLDS</div><h3 class="archive-title">TOP 5 WORKS OF FICTION.</h3>
-          <ol class="archive-list"><li>Random Chat</li><li>Jujutsu Kaisen</li><li>Bleach</li><li>Naruto</li><li>One Piece</li></ol>
-        </section>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-  <div class="reading-inline">
-
-
-
-    <span class="reading-trigger">READING</span>
-
-
-
-    <div class="reading-popup">
-
-
-
-      <small>CURRENTLY READING</small>
-
-
-
-      <h3>THE BROTHERS KARAMAZOV</h3>
-
-
-
-      <p>Fyodor Dostoevsky</p>
-
-
-
-      <div class="reading-progress">
-
-        <span>95 / 556 pages </span> · 17,09%
-
-      </div>
-
-
-
-    </div>
-
-  </div>
-
-
-
-  <div class="social-title">FIND ME ON</div>
-
-
-
-</div>
-
-
-
-
-
-<div class="socials">
-
-
-
-  <a
-
-    class="social"
-
-    href="https://www.tiktok.com/@brokul1511"
-
-    target="_blank"
-
-    rel="noopener"
-
-  >
-
-
-
-    <span class="icon">
-
-
-
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-        <path
-
-          d="M15.5 4.5C16.1 6.1 17.3 7.1 19 7.3V10.1C17.6 10 16.4 9.6 15.4 8.9V15.1C15.4 18.3 13.3 20.5 10.3 20.5C7.4 20.5 5.2 18.4 5.2 15.5C5.2 12.7 7.2 10.5 10.1 10.5C10.5 10.5 10.8 10.6 11.1 10.6V13.5C10.8 13.4 10.5 13.3 10.2 13.3C8.9 13.3 8 14.2 8 15.5C8 16.7 8.9 17.6 10.2 17.6C11.6 17.6 12.5 16.7 12.5 15.1V4.5H15.5Z"
-
-          fill="currentColor"
-
-        />
-
-      </svg>
-
-
-
-    </span>
-
-
-
-    <span>
-
-      <small>TIKTOK</small>
-
-      <strong>@brokul1511</strong>
-
-    </span>
-
-
-
-    <span class="arrow">↗</span>
-
-
-
-  </a>
-
-
-
-
-
-  <button class="social" id="discord">
-
-
-
-    <span class="icon">
-
-
-
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-        <path
-
-          d="M18.8 5.2A16.5 16.5 0 0 0 15 4l-.5 1a15 15 0 0 0-5 0L9 4a16.5 16.5 0 0 0-3.8 1.2C2.8 8.2 2.2 11.8 2.5 15.4A16.5 16.5 0 0 0 7 17.7l1.1-1.5c-.6-.2-1.2-.5-1.7-.8l.4-.3c3.2 1.5 7 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.5 16.5 0 0 0 4.5-2.3c.4-4.2-.7-7.8-2.5-10.2ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"
-
-          fill="currentColor"
-
-        />
-
-      </svg>
-
-
-
-    </span>
-
-
-
-    <span>
-
-      <small>DISCORD</small>
-
-      <strong id="discordText">krultepes2627</strong>
-
-    </span>
-
-
-
-    <span class="arrow">⧉</span>
-
-
-
-  </button>
-
-
-
-</div>
-
-
-
-
-
-<div class="steam-wrapper">
-
-
-
-  <a
-
-    class="social steam"
-
-    href="https://steamcommunity.com/profiles/76561199138254595"
-
-    target="_blank"
-
-    rel="noopener"
-
-  >
-
-
-
-    <span class="icon">
-
-
-
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-
-        <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
-
-      </svg>
-
-
-
-    </span>
-
-
-
-    <span>
-
-      <small>STEAM</small>
-
-      <strong>ABARun2Win</strong>
-
-    </span>
-
-
-
-    <span class="arrow">↗</span>
-
-
-
-  </a>
-
-
-
-</div>
-
-
-
-
-
-<footer>
-
-  • <span id="footer">DZIĘKI ZA ODWIEDZINY</span> •
-
-</footer>
-
-
-
-</main>
-
-</div>
-
-
-
-
-
-<div class="easter-egg">
-
-
-
-  <button class="easter-button" id="easterButton"></button>
-
-
-
-  <div class="easter-popup" id="easterPopup">
-
-
-
-    <button class="easter-close" id="easterClose">×</button>
-
-
-
-    <small>EASTER EGG</small>
-
-
-
-    <h3>CEL TEJ STRONY</h3>
-
-
-
-    <p>
-
-      Chcę nauczyć się więcej o kodowaniu i tworzeniu stron internetowych.
-
-      Ta strona jest częścią mojej nauki (będę ją stopniowo rozwijać i ulepszać).
-
-    </p>
-
-
-
-    <h3>GOAL OF THIS WEBSITE</h3>
-
-
-
-    <p>
-
-      I want to learn more about coding and web development.
-
-      This website is part of my learning journey (I'll keep improving
-
-      and expanding it over time).
-
-    </p>
-
-
-
-  </div>
-
-
-
-</div>
-
-
-
-
-
-<div class="exit-overlay" id="exitOverlay">
-
-  <div class="exit-popup">
-
-    <button class="exit-close" id="exitClose" aria-label="Close">×</button>
-
-    <small>EXIT DETECTED</small>
-
-    <h2 id="exitTitle">EJ, DOKĄD?</h2>
-
-    <p id="exitText">Dlaczego wychodzisz? Przecież dopiero co tu byłeś.</p>
-
-    <div class="exit-buttons">
-
-      <button class="exit-button primary" id="stayButton">ZOSTAJĘ</button>
-
-      <button class="exit-button" id="leaveButton">MIMO TO WYJDŹ</button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-
-<nav class="social-rail" aria-label="Social media">
-  <a href="https://steamcommunity.com/profiles/76561199138254595" target="_blank" rel="noopener" aria-label="Steam" title="Steam">
-    <span class="rail-label">STEAM</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0z"/></svg>
-  </a>
-  <a href="https://www.tiktok.com/@brokul1511" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
-    <span class="rail-label">TIKTOK</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5C16.1 6.1 17.3 7.1 19 7.3V10.1C17.6 10 16.4 9.6 15.4 8.9V15.1C15.4 18.3 13.3 20.5 10.3 20.5C7.4 20.5 5.2 18.4 5.2 15.5C5.2 12.7 7.2 10.5 10.1 10.5C10.5 10.5 10.8 10.6 11.1 10.6V13.5C10.8 13.4 10.5 13.3 10.2 13.3C8.9 13.3 8 14.2 8 15.5C8 16.7 8.9 17.6 10.2 17.6C11.6 17.6 12.5 16.7 12.5 15.1V4.5H15.5Z"/></svg>
-  </a>
-  <div class="lol-chooser">
-    <button type="button" id="lolMenuToggle" aria-label="Wybierz konto League of Legends" aria-expanded="false" aria-controls="lolAccountMenu" title="League of Legends · MAIN / ALT">
-      <span class="rail-label">LEAGUE OF LEGENDS</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="m1.912 0 1.212 2.474v19.053L1.912 24h14.73l1.337-4.682H8.33V0ZM12 1.516c-.913 0-1.798.112-2.648.312v1.74a9.738 9.738 0 0 0 2.648-.368c5.267 0 9.536 4.184 9.536 9.348a9.203 9.203 0 0 1-2.3 6.086l-.273.954-.602 2.112c2.952-1.993 4.89-5.335 4.89-9.122C23.25 6.468 18.213 1.516 12 1.516Zm0 2.673c-.924 0-1.814.148-2.648.414v13.713h8.817a8.246 8.246 0 0 0 2.36-5.768c0-4.617-3.818-8.359-8.529-8.359zM2.104 7.312A10.858 10.858 0 0 0 .75 12.576c0 1.906.492 3.7 1.355 5.266z" fill="currentColor"/></svg>
+    <button type="button" id="discordCopy" aria-label="Copy Discord username" title="Discord">
+      <span class="rail-label">DISCORD · CLICK TO COPY</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.8 5.2A16.5 16.5 0 0 0 15 4l-.5 1a15 15 0 0 0-5 0L9 4a16.5 16.5 0 0 0-3.8 1.2C2.8 8.2 2.2 11.8 2.5 15.4A16.5 16.5 0 0 0 7 17.7l1.1-1.5c-.6-.2-1.2-.5-1.7-.8l.4-.3c3.2 1.5 7 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.5 16.5 0 0 0 4.5-2.3c.4-4.2-.7-7.8-2.5-10.2ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
     </button>
-    <div class="lol-account-menu" id="lolAccountMenu" hidden>
-      <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-FTCWL" target="_blank" rel="noopener" aria-label="MAIN KASSADIN88 FTCWL EUNE">MAIN <span>KASSADIN88#FTCWL</span></a>
-      <a href="https://www.leagueofgraphs.com/summoner/eune/KASSADIN88-gojo" target="_blank" rel="noopener" aria-label="ALT KASSADIN88 gojo EUNE">ALT <span>KASSADIN88#gojo</span></a>
-    </div>
-  </div>
-  <button type="button" aria-label="Copy Discord username" title="Discord" onclick="document.getElementById('discord').click()">
-    <span class="rail-label">DISCORD · CLICK TO COPY</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.8 5.2A16.5 16.5 0 0 0 15 4l-.5 1a15 15 0 0 0-5 0L9 4a16.5 16.5 0 0 0-3.8 1.2C2.8 8.2 2.2 11.8 2.5 15.4A16.5 16.5 0 0 0 7 17.7l1.1-1.5c-.6-.2-1.2-.5-1.7-.8l.4-.3c3.2 1.5 7 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.5 16.5 0 0 0 4.5-2.3c.4-4.2-.7-7.8-2.5-10.2ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
-  </button>
-</nav>
+  </nav>
 
-<script>
+  <script>
+    const lolToggle = document.getElementById('lolMenuToggle');
+    const lolMenu = document.getElementById('lolAccountMenu');
+    lolToggle.addEventListener('click', () => {
+      const open = lolToggle.getAttribute('aria-expanded') === 'true';
+      lolToggle.setAttribute('aria-expanded', String(!open));
+      lolMenu.hidden = open;
+    });
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.lol-chooser')) {
+        lolMenu.hidden = true;
+        lolToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        lolMenu.hidden = true;
+        lolToggle.setAttribute('aria-expanded', 'false');
+        lolToggle.focus();
+      }
+    });
+    document.getElementById('discordCopy').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText('krultepes2627'); } catch (error) {}
+    });
 
-const lolMenuToggle = document.getElementById('lolMenuToggle');
-const lolAccountMenu = document.getElementById('lolAccountMenu');
-if (lolMenuToggle && lolAccountMenu) {
-  lolMenuToggle.addEventListener('click', () => {
-    const isOpen = lolMenuToggle.getAttribute('aria-expanded') === 'true';
-    lolMenuToggle.setAttribute('aria-expanded', String(!isOpen));
-    lolAccountMenu.hidden = isOpen;
-  });
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.lol-chooser')) {
-      lolAccountMenu.hidden = true;
-      lolMenuToggle.setAttribute('aria-expanded', 'false');
+    const plTab = document.getElementById('plTab');
+    const enTab = document.getElementById('enTab');
+    const languageCopy = document.getElementById('languageCopy');
+    const languageTexts = {
+      pl: 'Kiedyś ten pomysł naprawdę mnie jarał, ale z czasem trochę mi się znudził. Na razie trwają prace może jeszcze do niego wrócę.',
+      en: 'I used to be really into this idea, but over time I got a little bored with it. The work is still in progress for now maybe I’ll come back to it someday.'
+    };
+    function setLanguage(language) {
+      const polish = language === 'pl';
+      languageCopy.textContent = languageTexts[language];
+      languageCopy.lang = language;
+      plTab.classList.toggle('active', polish);
+      enTab.classList.toggle('active', !polish);
+      plTab.setAttribute('aria-selected', String(polish));
+      enTab.setAttribute('aria-selected', String(!polish));
     }
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      lolAccountMenu.hidden = true;
-      lolMenuToggle.setAttribute('aria-expanded', 'false');
-      lolMenuToggle.focus();
-    }
-  });
-}
-
-
-
-
-
-const pl = document.getElementById('pl');
-
-const en = document.getElementById('en');
-
-const polish = document.getElementById('polish');
-
-const english = document.getElementById('english');
-
-const footer = document.getElementById('footer');
-
-
-
-function setLanguage(x){
-
-
-
-  const p = x === 'pl';
-
-
-
-  polish.style.display = p ? 'block' : 'none';
-
-  english.style.display = p ? 'none' : 'block';
-
-
-
-  pl.classList.toggle('active', p);
-
-  en.classList.toggle('active', !p);
-
-
-
-  footer.textContent = p
-
-    ? 'DZIĘKI ZA ODWIEDZINY'
-
-    : 'THANKS FOR VISITING';
-
-
-
-  document.documentElement.lang = p ? 'pl' : 'en';
-
-}
-
-
-
-pl.addEventListener('click', () => setLanguage('pl'));
-
-en.addEventListener('click', () => setLanguage('en'));
-
-
-
-setLanguage('pl');
-
-
-
-const languageWelcome = document.getElementById('languageWelcome');
-
-const welcomePl = document.getElementById('welcomePl');
-
-const welcomeEn = document.getElementById('welcomeEn');
-
-
-
-function chooseWelcomeLanguage(language){
-
-  setLanguage(language);
-
-  try { localStorage.setItem('siteLanguageChosen', '1'); } catch (error) {}
-
-  languageWelcome.classList.add('hidden');
-
-}
-
-
-
-welcomePl.addEventListener('click', (event) => {
-
-  event.preventDefault();
-
-  event.stopPropagation();
-
-  chooseWelcomeLanguage('pl');
-
-});
-
-
-
-welcomeEn.addEventListener('click', (event) => {
-
-  event.preventDefault();
-
-  event.stopPropagation();
-
-  chooseWelcomeLanguage('en');
-
-});
-
-
-
-let languageAlreadyChosen = false;
-try { languageAlreadyChosen = localStorage.getItem('siteLanguageChosen') === '1'; } catch (error) {}
-if (languageAlreadyChosen) {
-
-  languageWelcome.classList.add('hidden');
-
-}
-
-
-
-
-
-
-
-document.getElementById('discord').onclick = async () => {
-
-
-
-  try {
-
-
-
-    await navigator.clipboard.writeText('krultepes2627');
-
-
-
-    const e = document.getElementById('discordText');
-
-    const old = e.textContent;
-
-
-
-    e.textContent = 'COPIED ✓';
-
-
-
-    setTimeout(() => {
-
-      e.textContent = old;
-
-    }, 1200);
-
-
-
-  } catch(e) {}
-
-
-
-};
-
-
-
-
-
-
-
-
-
-const exitOverlay = document.getElementById('exitOverlay');
-
-const stayButton = document.getElementById('stayButton');
-
-const leaveButton = document.getElementById('leaveButton');
-
-const exitClose = document.getElementById('exitClose');
-
-const exitTitle = document.getElementById('exitTitle');
-
-const exitText = document.getElementById('exitText');
-
-let exitIntentShown = false;
-
-let exitTrollDisabled = false;
-
-const isMobileDevice =
-
-  window.matchMedia('(max-width: 800px)').matches ||
-
-  window.matchMedia('(pointer: coarse)').matches ||
-
-  'ontouchstart' in window;
-
-
-
-function showExitTroll(){
-
-  if(isMobileDevice) return;
-
-  if(exitTrollDisabled || !exitOverlay) return;
-
-  exitIntentShown = true;
-
-
-
-  const isEnglish = document.documentElement.lang === 'en';
-
-  exitTitle.textContent = isEnglish ? 'HEY, WHERE ARE YOU GOING?' : 'EJ, DOKĄD?';
-
-  exitText.textContent = isEnglish
-
-    ? 'Why are you leaving? You just got here.'
-
-    : 'Dlaczego wychodzisz? Przecież dopiero co tu byłeś.';
-
-  stayButton.textContent = isEnglish ? "I'M STAYING" : 'ZOSTAJĘ';
-
-  leaveButton.textContent = isEnglish ? 'LEAVE ANYWAY' : 'MIMO TO WYJDŹ';
-
-
-
-  exitOverlay.classList.add('active');
-
-}
-
-
-
-function hideExitTroll(){
-
-  exitOverlay.classList.remove('active');
-
-  exitIntentShown = false;
-
-}
-
-
-
-
-
-stayButton.onclick = () => hideExitTroll();
-
-leaveButton.onclick = () => hideExitTroll();
-
-
-
-
-
-exitClose.onclick = () => {
-
-  exitTrollDisabled = true;
-
-  hideExitTroll();
-
-};
-
-
-
-
-
-if(!isMobileDevice) document.addEventListener('mouseout', (event) => {
-
-  if(event.relatedTarget || event.toElement) return;
-
-  if(event.clientY <= 5) showExitTroll();
-
-});
-
-
-
-
-
-if(!isMobileDevice) document.addEventListener('pointerout', (event) => {
-
-  if(event.relatedTarget) return;
-
-  if(event.clientY <= 5) showExitTroll();
-
-});
-
-
-
-
-
-const easterButton = document.getElementById('easterButton');
-
-const easterPopup = document.getElementById('easterPopup');
-
-const easterClose = document.getElementById('easterClose');
-
-
-
-easterButton.onclick = () => {
-
-  easterPopup.classList.toggle('active');
-
-};
-
-
-
-easterClose.onclick = () => {
-
-  easterPopup.classList.remove('active');
-
-};
-
-
-
-</script>
-
-<script type="module"
-
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-
-        data-cf-beacon='{"token": "660f81cab4714ab59aff76bcb1d6327e"}'></script>
-
+    plTab.addEventListener('click', () => setLanguage('pl'));
+    enTab.addEventListener('click', () => setLanguage('en'));
+  </script>
 </body>
-
 </html>
