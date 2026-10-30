@@ -1547,7 +1547,8 @@ html, body {
           <button type="button" class="active" id="plTab" role="tab" aria-selected="true">POLSKI</button>
           <button type="button" id="enTab" role="tab" aria-selected="false">ENGLISH</button>
         </div>
-        <p class="language-copy" id="languageCopy" lang="pl">Kiedyś ten pomysł naprawdę mnie jarał, ale z czasem trochę mi się znudził. Na razie trwają prace może jeszcze do niego wrócę.</p>
+        <p class="language-copy" id="languageCopy" lang="pl">znudzil mi sie pomysl, moze kiedys do niego wroce zobaczymy.</p>
+        <p class="language-copy" id="languageCopyEn" lang="en" style="display: none;">I got bored with the idea, maybe I’ll come back to it someday.</p>
       </section>
       <section class="media-stack" aria-label="Memy i grafika">
         <img class="joke-image" src="joke.png" alt="Mem: Sorry bro, the joke is still being built. Keep scrolling.">
@@ -1610,8 +1611,8 @@ html, body {
     const enTab = document.getElementById('enTab');
     const languageCopy = document.getElementById('languageCopy');
     const languageTexts = {
-      pl: 'Kiedyś ten pomysł naprawdę mnie jarał, ale z czasem trochę mi się znudził. Na razie trwają prace może jeszcze do niego wrócę.',
-      en: 'I used to be really into this idea, but over time I got a little bored with it. The work is still in progress for now maybe I’ll come back to it someday.'
+      pl: 'znudzil mi sie pomysl, moze kiedys do niego wroce zobaczymy.',
+      en: 'I got bored with the idea, maybe I’ll come back to it someday.'
     };
     function setLanguage(language) {
       const polish = language === 'pl';
